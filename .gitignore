@@ -1,0 +1,12 @@
+.idea
+
+node_modules
+
+# output of ts compiler
+lib
+
+/fixtures/*
+!/fixtures/.gitkeep
+
+/logs/*
+!/logs/.gitkeep

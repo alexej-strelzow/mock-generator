@@ -1,0 +1,38 @@
+{
+  "name": "mock-generator",
+  "version": "0.0.1",
+  "description": "Saves http response as fixture file",
+  "author": "Alexej Strelzow",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p .",
+    "start:prod": "npm run build && node lib/index.js",
+    "UNIX": "############  LINUX & MacOSx  ############",
+    "start": "ts-node src/index.ts && npm run format:fixtures",
+    "start:dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "format:fixtures": "prettier --single-quote --write ./fixtures/*.ts",
+    "format:all": "prettier --single-quote --write ./**/*.ts",
+    "WINDOWS": "############  WINDOWS  ############",
+    "start:win": "ts-node.cmd src/index.ts && npm run format:fixtures:win",
+    "start:dev:win": "nodemon --watch 'src/**/*.ts' --exec ts-node.cmd src/index.ts",
+    "format:fixtures:win": "prettier.cmd --single-quote --write ./fixtures/*.ts",
+    "format:all:win": "prettier.cmd --single-quote --write ./**/*.ts"
+  },
+  "dependencies": {
+    "config": "~3.2.4",
+    "jsonfile": "~5.0.0",
+    "node-fetch": "~2.6.0",
+    "nodemon": "~2.0.2"
+  },
+  "devDependencies": {
+    "@types/config": "~0.0.36",
+    "@types/node": "~10.14.17",
+    "@types/node-fetch": "~2.5.4",
+    "prettier": "~1.19.1",
+    "ts-node": "~8.5.4",
+    "tslint": "~5.20.0",
+    "tslint-config-prettier": "~1.18.0",
+    "tslint-config-standard": "~9.0.0",
+    "typescript": "~3.5.3"
+  }
+}
